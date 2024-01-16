@@ -18,4 +18,5 @@ export const TwoColumnWrapper = styled.div`
   bottom: ${(props) => props.theme.footerHeight};
   background-color: ${(props) => props.theme.backgroundColorGray};
   max-width: ${(props) => props.theme.pageWidth};
+  box-sizing: border-box;
 `;
