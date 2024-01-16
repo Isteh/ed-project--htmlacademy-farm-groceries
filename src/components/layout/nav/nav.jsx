@@ -3,7 +3,6 @@ import { AppRoute } from "../../const";
 import Button from "/src/components/ui/button/button";
 import { StyledButton } from "./style";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 const buttons = [
   {
@@ -26,13 +25,12 @@ const buttons = [
 
 function Nav() {
   const pageUrl = useLocation().pathname;
-  console.log(pageUrl);
 
   return (
     <nav>
       {buttons
         .filter((button) => button.to !== pageUrl)
-        .map((button) => console.log(buttons) || button.item)}
+        .map((button) => button.item)}
     </nav>
   );
 }
