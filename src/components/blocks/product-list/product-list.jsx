@@ -2,20 +2,20 @@ import React, { forwardRef } from "react";
 import ProductCard from "/src/components/ui/product-card/product-card";
 import { ListWrapper } from "./styled";
 import { SwiperSlide } from "swiper/react";
+import SwiperCore, { Pagination, Mousewheel, Scrollbar } from "swiper/core";
 import "swiper/swiper-bundle.min.css";
-import { Pagination, Scrollbar, Mousewheel } from "swiper/modules";
+SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 
 function ProductList({ groceries, setSwiperRef }) {
   return (
     <>
       <ListWrapper
-        modules={[Pagination, Scrollbar, Mousewheel]}
         onSwiper={setSwiperRef}
-        spaceBetween={12}
         direction="vertical"
+        spaceBetween={12}
         slidesPerView="auto"
         scrollbar={{ draggable: true }}
-        mousewheel={true}
+        mousewheel
         pagination={{
           type: "fanction",
         }}
@@ -28,11 +28,6 @@ function ProductList({ groceries, setSwiperRef }) {
           );
         })}
       </ListWrapper>
-      {/* <ListWrapper ref={ref}>
-        {groceries.map((item) => {
-          return <ProductCard key={item.id} product={item} />;
-        })}
-      </ListWrapper> */}
     </>
   );
 }
