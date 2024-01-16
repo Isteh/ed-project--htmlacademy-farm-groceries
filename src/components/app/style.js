@@ -1,4 +1,4 @@
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle` 
 html {
@@ -18,5 +18,6 @@ body {
   line-height: 27px;
   font-weight: 400;
   color: ${(props) => props.theme.colorText};
+  background-color: ${(props) => props.theme.colorMainBG};
 }
 `;
